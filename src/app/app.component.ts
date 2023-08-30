@@ -7,7 +7,7 @@ import { GoogleBooksService } from './book-list/books.service';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
   title = 'Classical Music';
@@ -16,20 +16,42 @@ export class AppComponent {
   bookCollection$ = this.store.select(selectBookCollection);
 
   onAdd(bookId: string) {
+    /* 
+    
+    OLD PARADIGM:
+
     this.store.dispatch(new AddBook({ bookId }));
+    */
+    this.store.dispatch(AddBook({ bookId }));
   }
 
   onRemove(bookId: string) {
+    /* 
+    
+    OLD PARADIGM:
+
     this.store.dispatch(new RemoveBook({ bookId }));
+    */
+    this.store.dispatch(RemoveBook({ bookId }));
   }
 
-  constructor(private booksService: GoogleBooksService, private store: Store) {}
+  constructor(private booksService: GoogleBooksService, private store: Store) {
+    console.log('AppComponent: constructor()');
+  }
 
   ngOnInit() {
+    console.log('AppComponent: ngOnInit()');
     this.booksService
       .getBooks(this.title)
-      .subscribe((books) =>
-        this.store.dispatch(new RetrievedBookList({ books }))
-      );
+      .subscribe((books) => {
+        /* 
+
+        OLD PARADIGM:
+
+        return this.store.dispatch(new RetrievedBookList({ books }));
+        */
+        return this.store.dispatch(RetrievedBookList({ books }));
+      }
+    );
   }
 }
