@@ -39,3 +39,6 @@ button {
   font-size: large;
   min-width: 150px;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
