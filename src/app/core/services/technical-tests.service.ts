@@ -3,10 +3,10 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { TechnicalTest } from '../app.model';
+import { TechnicalTest } from '../../app.model';
 
 @Injectable({ providedIn: 'root' })
-export class GoogleTechnicalTestsService {
+export class TechnicalTestsService {
   constructor(private http: HttpClient) {}
 
   getTechnicalTests(title: string): Observable<Array<TechnicalTest>> {

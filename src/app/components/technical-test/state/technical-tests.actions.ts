@@ -28,7 +28,7 @@ export type TechnicalTestsActions = AddTechnicalTest | RemoveTechnicalTest;
 export type TechnicalTestsApiActions = RetrievedTechnicalTestList; */
 
 import { createAction, props} from '@ngrx/store';
-import { TechnicalTest } from '../app.model';
+import { TechnicalTest } from '../../../app.model';
 
 export const ADD_TECHNICAL_TEST = '[Technical Tests] Add Technical Test';
 export const REMOVE_TECHNICAL_TEST = '[Technical Tests] Remove Technical Test';

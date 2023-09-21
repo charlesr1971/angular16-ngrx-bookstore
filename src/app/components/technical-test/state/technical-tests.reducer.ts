@@ -20,7 +20,7 @@ export function technicalTestsReducer(
 
 import { createReducer, on } from '@ngrx/store';
 import * as TechnicalTestsActions from './technical-tests.actions';
-import { TechnicalTest } from '../app.model';
+import { TechnicalTest } from '../../../app.model';
 
 export const technicalTestsInitialState: ReadonlyArray<TechnicalTest> = [];
 

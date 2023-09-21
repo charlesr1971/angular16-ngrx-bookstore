@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy } from '@angular/core';
-import { TechnicalTest } from '../app.model';
+import { TechnicalTest } from '../../../app.model';
 
 @Component({
   selector: 'app-technical-test-collection',

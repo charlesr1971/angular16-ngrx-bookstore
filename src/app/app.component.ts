@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 
-import { selectTechnicalTestCollection, selectTechnicalTests } from './state/technical-tests.selectors';
-import { AddTechnicalTest, RemoveTechnicalTest, RetrievedTechnicalTestList } from './state/technical-tests.actions';
-import { GoogleTechnicalTestsService } from './technical-test-list/technical-tests.service';
+import { selectTechnicalTestCollection, selectTechnicalTests } from './components/technical-test/state/technical-tests.selectors';
+import { AddTechnicalTest, RemoveTechnicalTest, RetrievedTechnicalTestList } from './components/technical-test/state/technical-tests.actions';
+import { TechnicalTestsService } from './core/services/technical-tests.service';
 
 @Component({
   selector: 'app-root',
@@ -35,7 +35,7 @@ export class AppComponent {
     this.store.dispatch(RemoveTechnicalTest({ technicalTestId }));
   }
 
-  constructor(private technicalTestsService: GoogleTechnicalTestsService, private store: Store) {
+  constructor(private technicalTestsService: TechnicalTestsService, private store: Store) {
     console.log('AppComponent: constructor()');
   }
 

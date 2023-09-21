@@ -1,5 +1,5 @@
 import { createSelector, createFeatureSelector } from '@ngrx/store';
-import { TechnicalTest } from '../app.model';
+import { TechnicalTest } from '../../../app.model';
 
 export const TECHNICAL_TESTS_FEATURE = 'technicalTests';
 export const COLLECTION_FEATURE = 'collection';
