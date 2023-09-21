@@ -2,38 +2,38 @@
 
 OLD PARADIGM:
 
-import { ADD_BOOK, BooksActions, REMOVE_BOOK } from './books.actions';
+import { ADD_TECHNICAL_TEST, TechnicalTestsActions, REMOVE_TECHNICAL_TEST } from './technical-tests.actions';
 
 export const collectionInitialState: ReadonlyArray<string> = [];
 
 export function collectionReducer(
   state = collectionInitialState,
-  action: BooksActions
+  action: TechnicalTestsActions
 ) {
   switch (action.type) {
-    case ADD_BOOK:
-      if (state.indexOf(action.payload.bookId) > -1) {
+    case ADD_TECHNICAL_TEST:
+      if (state.indexOf(action.payload.technicalTestId) > -1) {
         return state;
       }
-      return [...state, action.payload.bookId];
+      return [...state, action.payload.technicalTestId];
 
-    case REMOVE_BOOK:
-      return state.filter((id) => id !== action.payload.bookId);
+    case REMOVE_TECHNICAL_TEST:
+      return state.filter((id) => id !== action.payload.technicalTestId);
   }
   return state;
 } */
 
 import { createReducer, on } from '@ngrx/store';
-import * as BooksActions from './books.actions';
+import * as TechnicalTestsActions from './technical-tests.actions';
 
 export const collectionInitialState: ReadonlyArray<string> = [];
 
 export const collectionReducer = createReducer(
   collectionInitialState,
-  on(BooksActions.AddBook, (state, { bookId }) => { 
-    return [ ...state, bookId ]
+  on(TechnicalTestsActions.AddTechnicalTest, (state, { technicalTestId }) => { 
+    return [ ...state, technicalTestId ]
   }),
-  on(BooksActions.RemoveBook, (state, { bookId }) => { 
-    return state.filter((id) => id !== bookId)
+  on(TechnicalTestsActions.RemoveTechnicalTest, (state, { technicalTestId }) => { 
+    return state.filter((id) => id !== technicalTestId)
   })
 );

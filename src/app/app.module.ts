@@ -4,25 +4,25 @@ import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
-import { booksReducer } from './state/books.reducer';
+import { technicalTestsReducer } from './state/technical-tests.reducer';
 import { collectionReducer } from './state/collection.reducer';
-import { BooksEffects } from './state/books.effects';
+import { TechnicalTestsEffects } from './state/technical-tests.effects';
 
-import { BookListComponent } from './book-list/book-list.component';
-import { BookCollectionComponent } from './book-collection/book-collection.component';
+import { TechnicalTestListComponent } from './technical-test-list/technical-test-list.component';
+import { TechnicalTestCollectionComponent } from './technical-test-collection/technical-test-collection.component';
 import { AppComponent } from './app.component';
-import { BOOKS_FEATURE, COLLECTION_FEATURE } from './state/books.selectors';
+import { TECHNICAL_TESTS_FEATURE, COLLECTION_FEATURE } from './state/technical-tests.selectors';
 
 @NgModule({
   imports: [
     BrowserModule,
     StoreModule.forRoot({}),
-    StoreModule.forFeature(BOOKS_FEATURE, booksReducer),
+    StoreModule.forFeature(TECHNICAL_TESTS_FEATURE, technicalTestsReducer),
     StoreModule.forFeature(COLLECTION_FEATURE, collectionReducer),
     HttpClientModule,
-    EffectsModule.forRoot([BooksEffects]),
+    EffectsModule.forRoot([TechnicalTestsEffects]),
   ],
-  declarations: [AppComponent, BookListComponent, BookCollectionComponent],
+  declarations: [AppComponent, TechnicalTestListComponent, TechnicalTestCollectionComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

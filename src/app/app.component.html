@@ -1,13 +1,13 @@
-<h2>{{title}} Books</h2>
-<app-book-list 
-  class="book-list" 
-  [books]="(books$ | async)!" 
+<h2>{{title}} Technical Tests</h2>
+<app-technical-test-list 
+  class="technical-test-list" 
+  [technicalTests]="(technicalTests$ | async)!" 
   (add)="onAdd($event)">
-</app-book-list>
+</app-technical-test-list>
 
 <h2>My Collection</h2>
-<app-book-collection 
-  class="book-collection" 
-  [books]="(bookCollection$ | async)!" 
+<app-technical-test-collection 
+  class="technical-test-collection" 
+  [technicalTests]="(technicalTestCollection$ | async)!" 
   (remove)="onRemove($event)">
-</app-book-collection>
+</app-technical-test-collection>

@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 
-import { selectBookCollection, selectBooks } from './state/books.selectors';
-import { AddBook, RemoveBook, RetrievedBookList } from './state/books.actions';
-import { GoogleBooksService } from './book-list/books.service';
+import { selectTechnicalTestCollection, selectTechnicalTests } from './state/technical-tests.selectors';
+import { AddTechnicalTest, RemoveTechnicalTest, RetrievedTechnicalTestList } from './state/technical-tests.actions';
+import { GoogleTechnicalTestsService } from './technical-test-list/technical-tests.service';
 
 @Component({
   selector: 'app-root',
@@ -12,45 +12,45 @@ import { GoogleBooksService } from './book-list/books.service';
 export class AppComponent {
   title = 'Classical Music';
 
-  books$ = this.store.select(selectBooks);
-  bookCollection$ = this.store.select(selectBookCollection);
+  technicalTests$ = this.store.select(selectTechnicalTests);
+  technicalTestCollection$ = this.store.select(selectTechnicalTestCollection);
 
-  onAdd(bookId: string) {
+  onAdd(technicalTestId: string) {
     /* 
     
     OLD PARADIGM:
 
-    this.store.dispatch(new AddBook({ bookId }));
+    this.store.dispatch(new AddTechnicalTest({ technicalTestId }));
     */
-    this.store.dispatch(AddBook({ bookId }));
+    this.store.dispatch(AddTechnicalTest({ technicalTestId }));
   }
 
-  onRemove(bookId: string) {
+  onRemove(technicalTestId: string) {
     /* 
     
     OLD PARADIGM:
 
-    this.store.dispatch(new RemoveBook({ bookId }));
+    this.store.dispatch(new RemoveTechnicalTest({ technicalTestId }));
     */
-    this.store.dispatch(RemoveBook({ bookId }));
+    this.store.dispatch(RemoveTechnicalTest({ technicalTestId }));
   }
 
-  constructor(private booksService: GoogleBooksService, private store: Store) {
+  constructor(private technicalTestsService: GoogleTechnicalTestsService, private store: Store) {
     console.log('AppComponent: constructor()');
   }
 
   ngOnInit() {
     console.log('AppComponent: ngOnInit()');
-    this.booksService
-      .getBooks(this.title)
-      .subscribe((books) => {
+    this.technicalTestsService
+      .getTechnicalTests(this.title)
+      .subscribe((technicalTests) => {
         /* 
 
         OLD PARADIGM:
 
-        return this.store.dispatch(new RetrievedBookList({ books }));
+        return this.store.dispatch(new RetrievedTechnicalTestList({ technicalTests }));
         */
-        return this.store.dispatch(RetrievedBookList({ books }));
+        return this.store.dispatch(RetrievedTechnicalTestList({ technicalTests }));
       }
     );
   }

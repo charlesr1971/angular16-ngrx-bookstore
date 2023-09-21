@@ -1,4 +1,4 @@
-export interface Book {
+export interface TechnicalTest {
   id: string;
   volumeInfo: {
     title: string;

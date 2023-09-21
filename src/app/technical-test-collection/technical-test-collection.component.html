@@ -1,0 +1,12 @@
+<div 
+  class="technical-test-item"
+  *ngFor="let technicalTest of technicalTests"
+>
+  <div>{{technicalTest.volumeInfo.title}}
+    <span> by {{technicalTest.volumeInfo.authors}}</span>
+  </div>
+  <button
+    (click)="remove.emit(technicalTest.id)"
+    data-test="remove-button"
+  >Remove</button>
+</div>

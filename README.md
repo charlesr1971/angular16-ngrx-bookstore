@@ -18,7 +18,7 @@ Answer the following questions:
 
 To implement the exercise, follow these steps:
 
-1. Create an effect in the `BooksEffects` class that displays an "alert" message whenever a book is added or removed from the collection.
+1. Create an effect in the `TechnicalTestsEffects` class that displays an "alert" message whenever a book is added or removed from the collection.
 2. The message should contain the text: "The book 'Title' has been added to the collection" or "The book 'Title' has been removed from the collection".
 3. Generate additional Actions, Selectors, and Reducers as needed.
 

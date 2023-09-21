@@ -3,22 +3,22 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { Book } from '../app.model';
+import { TechnicalTest } from '../app.model';
 
 @Injectable({ providedIn: 'root' })
-export class GoogleBooksService {
+export class GoogleTechnicalTestsService {
   constructor(private http: HttpClient) {}
 
-  getBooks(title: string): Observable<Array<Book>> {
+  getTechnicalTests(title: string): Observable<Array<TechnicalTest>> {
     const params = {
       maxResults: 5,
       orderBy: 'relevance',
       q: title,
     };
     return this.http
-      .get<{ items: Book[] }>('https://www.googleapis.com/books/v1/volumes', {
+      .get<{ items: TechnicalTest[] }>('https://www.googleapis.com/books/v1/volumes', {
         params,
       })
-      .pipe(map((books) => books.items || []));
+      .pipe(map((technicalTests) => technicalTests.items || []));
   }
 }

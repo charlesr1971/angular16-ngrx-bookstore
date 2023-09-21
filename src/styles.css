@@ -13,7 +13,7 @@ h2 {
   font-size: 24px;
 }
 
-.book-item {
+.technical-test-item {
   display: flex;
   justify-content: space-between;
   border-radius: 4px;
@@ -23,12 +23,12 @@ h2 {
   align-items: center;
 }
 
-.book-item div span {
+.technical-test-item div span {
   display: block;
   font-size: smaller;
 }
 
-.book-collection .book-item {
+.technical-test-collection .technical-test-item {
   background-color: lightcyan;
 }
 

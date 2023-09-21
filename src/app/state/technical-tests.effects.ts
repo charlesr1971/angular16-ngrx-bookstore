@@ -2,6 +2,6 @@ import { Injectable } from '@angular/core';
 import { Actions } from '@ngrx/effects';
 
 @Injectable()
-export class BooksEffects {
+export class TechnicalTestsEffects {
   constructor(private actions$: Actions) {}
 }
